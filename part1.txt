@@ -14,3 +14,40 @@ many|       +-----------+      |many
 
 
 2.
+ +------+                  +-----+
+ |Worker|                  |Shift|
+ |name  |                  |day  |
+ |wage  |                  |time |
+ |      |                  |     |
+ +------+                  +-----+
+many|                         |many
+    |                         |
+    |                         |
+    |    +-------------+      |
+    |    |Work Schedule|      |
+    |    |worker id    |      |
+    +----+shift id     +------+
+         |             |
+         +-------------+
+
+
+3.
++-------+                       +-----+                +------------+             +------+
+|Chapter|many                  1|Book |many           1|Bibliography|1        many|Author|
+|title  +-----------------------+title+----------------+author id   +-------------+name  |
+|       |                       |year |                |book id     |             |      |
++-------+                       |     |many            |            |             +------+
+                                +----------------+     +------------+
+                                                 |
+                                                 |
+                                                 |
+                                             +---+-----+
+                                             |Join     |
+                                 +-----------+book id  |
+                                 |many       |reader id|
+                              +------+       |         |
+                              |Reader|       +---------+
+                              |name  |
+                              |age   |
+                              |      |
+                              +------+

@@ -1,0 +1,75 @@
+1.
++-----+               +-----+             +------+
+|Issue|many          1|Comic|             |Artist|
+|name +---------------+name |             |name  |
+|date |               |     |             |type  |
+|     |               +-----+             |      |
++-----+             many|                 +------+
+                        |                     |many
+                        |    +---------+      |
+                        |    |Crew     |1     |
+                        |   1|artist id+------+
+                        +----+writer id|
+                             |comic id |
+                             |         |
+                             +---------+
+                                  |1
+                                  |
+                                  |       +------+
+                                  |   many|Writer|
+                                  +-------+name  |
+                                          |      |
+                                          +------+
+
+
+2.
++----------+           +-------------+        +-----------+
+|Instrument|many      1|Production   |1   many|Song       |
+|name      +-----------+instrument id+--------+artist     |
+|type      |           |song id      |        |year       |
+|          |           |             |        |arrangement|
++----------+           +-------------+        |           |
+                                              +-----------+
+                                                  |many
+                                                  |
+                                                  |
+                                                  |
+                                                  |1
+                      +---------+             +------------+
+                      |Tour Date|many        1|Setlist     |
+                      |date     +-------------+song id     |
+                      |location |             |tour date id|
+                      |         |             |            |
+                      +---------+             +------------+
+
+
+3.
++--------+                   +-------+             +-------+
+|Gallery |1              many|Exhibit|many        1|Curator|
+|location+-------------------+date   +-------------+name   |
+|        |                   |       |             |       |
++--------+                   +-------+             +-------+
+                                                       |many
+                                                       |
+                                                       |
+                                                   +---+------+
+                                                   |Join      |
+                                                   |curator id|
+                                                   |artist id |
+                                                   |          |
+                                                   +---+------+
+                                                       |
+                                                       |
+                                                       |
+                                                       |many
+                                +-------+           +------+
+                                |Artwork|1      many|Artist|
+                                |name   +-----------+name  |
+                                |       |           |      |
+                                +-------+           +------+
+
+
+4.
++-----------+1           many+-----------+1       many+----------+
+|Music Piece+----------------+Sheet Music+------------+Instrument|
++-----------+                +-----------+            +----------+
